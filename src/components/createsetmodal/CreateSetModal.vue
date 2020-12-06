@@ -7,37 +7,58 @@
                 <button class="delete" aria-label="close" @click="cancel()"></button>
             </header>
             <section class="modal-card-body has-text-left">
-
-            <article class="message">
-                <div class="message-body has-text-left">
-                    <p>
-                        Fülle die Felder unten um eine neue Kartei anzulegen. 
-                    </p>
-                </div>
-            </article>
-            <fieldset :disabled="isSaving">
-                <div class="field">
-                    <label class="label">Kartei Name</label>
-                    <div class="control">
-                        <input v-model="setName" class="input" type="text" placeholder="z.B. Universität" />
+                <article class="message">
+                    <div class="message-body has-text-left">
+                        <p>Fülle die Felder unten um eine neue Kartei anzulegen.</p>
                     </div>
-                    <p class="help has-text-grey-light">Gib deiner neuen Kartei einen kurzen, aussagekräfitgen Namen.
-                        Der Name sollte mindestens 3 Zeichen lang sein.
-                    </p>
-                </div>
-
-                <div class="field">
-                    <label class="label">Kartei Beschreibung</label>
-                    <div class="control">
-                        <input v-model="setDescription" class="input" type="text" placeholder="z.B. Vokabeln die man in der Universität verwendet" />
+                </article>
+                <fieldset :disabled="isSaving">
+                    <div class="field">
+                        <label class="label">Kartei Name</label>
+                        <div class="control">
+                            <input
+                                v-model="setName"
+                                class="input"
+                                type="text"
+                                placeholder="z.B. Universität"
+                            />
+                        </div>
+                        <p class="help has-text-grey-light">
+                            Gib deiner neuen Kartei einen kurzen, aussagekräfitgen Namen.
+                            Der Name sollte mindestens 3 Zeichen lang sein.
+                        </p>
                     </div>
-                    <p class="help has-text-grey-light">Beschreibe deine neue Kartei mit ein paar worten.</p>
-                </div>
-            </fieldset>
+
+                    <div class="field">
+                        <label class="label">Kartei Beschreibung</label>
+                        <div class="control">
+                            <input
+                                v-model="setDescription"
+                                class="input"
+                                type="text"
+                                placeholder="z.B. Vokabeln die man in der Universität verwendet"
+                            />
+                        </div>
+                        <p
+                            class="help has-text-grey-light"
+                        >Beschreibe deine neue Kartei mit ein paar worten.</p>
+                    </div>
+                </fieldset>
             </section>
             <footer class="modal-card-foot">
-                <button :disabled="isSaving || nameInputError" class="button is-primary" @click="save()">Erstellen</button>
                 <button :disabled="isSaving" class="button" @click="cancel()">Abbrechen</button>
+                <button
+                    :disabled="isSaving || nameInputError"
+                    class="button is-primary"
+                    :class="isSaving ? 'is-loading' : ''"
+                    @click="save()"
+                >
+                    <span class="icon is-small">
+                        <i class="fas fa-check"></i>
+                    </span>
+
+                    <span>Erstellen</span>
+                </button>
             </footer>
         </div>
     </div>

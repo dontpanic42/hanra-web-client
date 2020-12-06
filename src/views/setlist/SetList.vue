@@ -16,7 +16,13 @@
                         <strong>Karten</strong> erstellen und verwalten.
                     </p>
                     <p>
-                        <button class="button" @click="showNewSetModal(true)">Kartei hinzufügen</button>
+                        <button class="button" @click="showNewSetModal(true)">
+                            <span class="icon is-small">
+                                <i class="fas fa-plus-circle"></i>
+                            </span>
+
+                            <span>Kartei hinzufügen</span>
+                        </button>
                     </p>
                 </div>
             </article>

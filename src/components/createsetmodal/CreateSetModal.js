@@ -23,7 +23,8 @@ export default {
         }),
 
         clear() {
-
+            this.setName = '';
+            this.setDescription = '';
         },
 
         cancel() {

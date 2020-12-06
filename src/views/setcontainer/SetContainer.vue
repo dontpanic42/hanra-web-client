@@ -1,14 +1,13 @@
 <template>
-
-
-    <section>
-    <NavBar></NavBar>
-    <div class="container is-max-desktop">
-        <BreadCrumbs></BreadCrumbs>
-
-        <router-view></router-view>
+    <div>
+        <NavBar></NavBar>
+        <section class="section">
+            <div class="container is-max-desktop">
+                <BreadCrumbs></BreadCrumbs>
+                <router-view></router-view>
+            </div>
+        </section>
     </div>
-    </section>
 </template>
 
 <script src="./SetContainer.js"></script>
