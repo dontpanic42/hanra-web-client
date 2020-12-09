@@ -1,12 +1,7 @@
 <template>
     <div class="card">
         <header class="card-header">
-            <p class="card-header-title">Lernkartei</p>
-            <a href="#" class="card-header-icon" aria-label="more options">
-                <span class="icon">
-                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                </span>
-            </a>
+            <div class="card-header-title"><i class="fas fa-box-open pr-2"></i> Lernkartei</div>
         </header>
 
         <div class="card-content">
@@ -14,15 +9,30 @@
             <p class="subtitle is-6">1203 mal aufgerufen</p>
         </div>
 
-
         <footer class="card-footer">
-            <p class="card-footer-item">
-                <span>
-                    12332 Karten
-                </span>
+            <p class="card-footer-item">                
+                <router-link
+                    :to="'/sets/' + id"
+                    class="button is-outline is-fullwidth"
+                >
+                    <span class="icon is-small">
+                        <i class="fas fa-edit"></i>
+                    </span>
+
+                    <span>Details</span>
+                </router-link>
             </p>
             <p class="card-footer-item">
-                <router-link :to="'/sets/' + id" class="button is-primary">Öffnen</router-link>
+                <router-link
+                    :to="'/sets/' + id + '/learn'"
+                    class="button is-primary is-fullwidth"
+                >
+                    <span class="icon is-small">
+                        <i class="fas fa-stopwatch"></i>
+                    </span>
+
+                    <span>Lernen</span>
+                </router-link>
             </p>
         </footer>
     </div>

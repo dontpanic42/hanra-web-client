@@ -27,7 +27,7 @@
                 </div>
             </article>
 
-            <article v-if="!isLoading && !setList.length" class="message is-info">
+            <article v-if="!isLoading && !isLoadingError && !setList.length" class="message is-info">
                 <div class="message-body has-text-left">
                     Es sieht so aus als hättest du noch keine Karteien. Klicke auf
                     <strong>Kartei hinzufügen</strong> um

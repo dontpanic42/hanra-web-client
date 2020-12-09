@@ -42,5 +42,23 @@ export default Object.freeze({
     CURSET_GET_DELETE_CARD_HAS_ERROR_REASON: 'currentset/getDeleteCardHasErrorReason',
     // currentset mutations
     CURSET_SET_CREATE_CARD_MODAL_VISIBLE: 'currentset/setCreateCardModalVisible',
-    CURSET_SET_CREATE_CARD_MODAL_SAVING: 'currentset/setCreateCardModalIsSaving'
+    CURSET_SET_CREATE_CARD_MODAL_SAVING: 'currentset/setCreateCardModalIsSaving',
+
+    // srsession
+    // actions
+    SRS_LOAD_SESSION: 'srsession/loadSession',
+    SRS_UPDATE_RATING: 'srsession/updateSRItem',
+    // getter
+    SRS_GET_CARDS: 'srsession/getCards',
+    SRS_GET_CURRENT_CARD: 'srsession/getCurrentCard',
+    SRS_GET_HAS_NEXT_CARD: 'srsession/getHasNextCard',
+    SRS_GET_CARDS_IS_LOADING: 'srsession/getCardsIsLoading',
+    SRS_GET_CARDS_HAS_LOADING_ERROR: 'srsession/getCardsHasLoadingError',
+    SRS_GET_REVIEW_IS_SAVING: 'srsession/getReviewIsSaving',
+    SRS_GET_REVIEW_HAS_SAVING_ERROR: 'srsession/getReviewHasSavingError',
+    SRS_GET_STAT_AVG_RATING: 'srsession/getStatisticAverageRating',
+    SRS_GET_STAT_NUM_CORRECT: 'srsession/getStatisticNumCorrect',
+    // srsession mutations
+    SRS_SET_NEXT_CARD: 'srsession/nextCard',
+    SRS_SET_RESET: 'srsession/resetSession'
 });

@@ -12,7 +12,6 @@ export default {
     },
     created() {
         this.loadSetList();
-        console.log(this.$store);
     },
     components: {
         SetCard,

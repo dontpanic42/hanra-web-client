@@ -15,9 +15,13 @@
                     </div>
                 </article>
 
-                <article v-if="!hasLoadingError && !isLoading && (!cards || !cards.length)" class="message is-info">
+                <article
+                    v-if="!hasLoadingError && !isLoading && (!cards || !cards.length)"
+                    class="message is-info"
+                >
                     <div class="message-body has-text-left">
-                        Diese Kartei ist leer. Klicke auf <strong>Neue Karte</strong> um eine Karte zu erstellen.
+                        Diese Kartei ist leer. Klicke auf
+                        <strong>Neue Karte</strong> um eine Karte zu erstellen.
                     </div>
                 </article>
 
@@ -48,10 +52,15 @@
                     </div>
                 </article>
 
-                <CardListItem v-for="card in cards" :key="card.id" :card="card" @delete-card="deleteCard"></CardListItem>
+                <CardListItem
+                    v-for="card in cards"
+                    :key="card.id"
+                    :card="card"
+                    @delete-card="deleteCard"
+                ></CardListItem>
 
                 <Pagination
-                    v-if="cards && cards.length"
+                    v-if="cards && cards.length && cardsNumPages > 1"
                     @change-page="showCardPage"
                     :current-page="cardsPage"
                     :num-pages="cardsNumPages"
@@ -72,13 +81,16 @@
                         Neue Karte
                     </a>
                     <div class="panel-block">
-                        <button class="button is-primary is-outlined is-fullwidth">
+                        <router-link
+                            class="button is-primary is-outlined is-fullwidth"
+                            :to="'/sets/' + currentSet.id + '/learn'"
+                        >
                             <span class="icon is-small">
                                 <i class="fas fa-stopwatch"></i>
                             </span>
 
                             <span>Lernen</span>
-                        </button>
+                        </router-link>
                     </div>
                 </article>
             </div>

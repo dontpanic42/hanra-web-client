@@ -60,6 +60,34 @@ const routes = [
                         meta: {
                             breadCrumb: 'Karte'
                         },
+                    },
+                    {
+                        path: 'learn',
+                        component: () => import(/* webpackChunkName: "startsession" */ '../views/session/sessionstart/SessionStart.vue'),
+                        meta: {
+                            breadCrumb: 'Lernen'
+                        }
+                    },
+                    {
+                        path: 'learn-view',
+                        component: () => import(/* webpackChunkName: "sessionview" */ '../views/session/sessionview/SessionView.vue'),
+                        meta: {
+                            breadCrumb: 'Lernen'
+                        }
+                    },
+                    {
+                        path: 'learn-rate',
+                        component: () => import(/* webpackChunkName: "sessionview" */ '../views/session/sessionrate/SessionRate.vue'),
+                        meta: {
+                            breadCrumb: 'Lernen'
+                        }
+                    },
+                    {
+                        path: 'learn-summary',
+                        component: () => import(/* webpackChunkName: "sessionsummary" */ '../views/session/sessionsummary/SessionSummary.vue'),
+                        meta: {
+                            breadCrumb: 'Lernen'
+                        }
                     }
                 ]
             }

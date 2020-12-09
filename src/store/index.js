@@ -2,6 +2,7 @@ import { createStore } from 'vuex';
 
 import sets from './sets/index';
 import currentset from './currentset/index';
+import srsession from './srsession/index';
 
 export default createStore({
   state: {},
@@ -9,6 +10,7 @@ export default createStore({
   actions: {},
   modules: {
     sets,
-    currentset
+    currentset,
+    srsession
   },
 });

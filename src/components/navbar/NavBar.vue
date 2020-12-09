@@ -32,7 +32,6 @@
                     <p class="control has-icons-right">
                         <input class="input" type="search" placeholder="Search..." />
                         <span class="icon is-small is-right">
-                            <icon />
                         </span>
                     </p>
                 </div>
