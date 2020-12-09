@@ -60,5 +60,13 @@ export default Object.freeze({
     SRS_GET_STAT_NUM_CORRECT: 'srsession/getStatisticNumCorrect',
     // srsession mutations
     SRS_SET_NEXT_CARD: 'srsession/nextCard',
-    SRS_SET_RESET: 'srsession/resetSession'
+    SRS_SET_RESET: 'srsession/resetSession',
+
+    // strokeordermodal
+    // getter
+    SOM_GET_IS_VISIBLE: 'strokeordermodal/getIsVisible',
+    SOM_GET_CHARARCTER: 'strokeordermodal/getCharacter',
+    // strokeordermodal mutations
+    SOM_SET_VISIBLE: 'strokeordermodal/setVisible',
+    SOM_SET_SHOW_CHARACTER: 'strokeordermodal/showCharacter'
 });

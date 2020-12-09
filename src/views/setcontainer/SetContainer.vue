@@ -7,6 +7,7 @@
                 <router-view></router-view>
             </div>
         </section>
+        <StrokeOrderModal></StrokeOrderModal>
     </div>
 </template>
 

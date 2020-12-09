@@ -49,6 +49,23 @@ export default {
                 this.clear();
                 this.setVisible(false);
             }
+        },
+
+        setFocus() {
+            setTimeout(() => {
+                if(this.$el) {
+                    this.$el.querySelector('.focus-on-enter').focus();
+                }
+            });
+        }
+    },
+    watch: {
+        // Check for visibility changes. When the dialog becomes visible, we want the first
+        // input field to be focussed
+        'isVisible': function(newValue, oldValue) {
+            if(newValue && newValue != oldValue) {
+                this.setFocus();
+            }
         }
     },
     computed: {

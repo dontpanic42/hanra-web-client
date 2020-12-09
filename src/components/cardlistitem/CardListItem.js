@@ -1,3 +1,5 @@
+import HanziText from '../hanzitext/HanziText.vue';
+
 export default {
     name: 'CardListItem',
     props: {
@@ -9,6 +11,9 @@ export default {
     emits: [
         'deleteCard'
     ],
+    components: {
+        HanziText
+    },
     data: function() {
         return {
             isExpanded: false

@@ -1,5 +1,7 @@
 import BreadCrumbs from '../../components/breadcrumbs/BreadCrumbs.vue';
-import NavBar from '../../components/navbar/NavBar.vue'
+import NavBar from '../../components/navbar/NavBar.vue';
+import StrokeOrderModal from '../../components/strokeordermodal/StrokeOrderModal.vue';
+
 export default {
     name: 'SetContainer',
     props: {},
@@ -8,6 +10,7 @@ export default {
     },
     components: {
         BreadCrumbs,
-        NavBar
+        NavBar,
+        StrokeOrderModal
     }
 };

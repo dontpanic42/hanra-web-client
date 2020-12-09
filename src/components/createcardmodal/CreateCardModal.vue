@@ -31,7 +31,7 @@
                         <div class="control has-icons-left">
                             <input
                                 v-model="cardQuestion"
-                                class="input"
+                                class="input focus-on-enter"
                                 type="text"
                                 placeholder="z.B. Mir geht es gut"
                             />
@@ -62,9 +62,9 @@
                         >Die Lösung der frage, in Pinyin. Du kannst Zahlen (1-4) hinter den Buchstaben tippen um die Töne zu schreiben, tippst du z.B. "wo3" wird daraus "wǒ".</p>
                     </div>
 
-                    <div class="field">
-                        <label class="label">Antwort (Hanzi)</label>
-                        <div class="control has-icons-left">
+                    <label class="label">Antwort (Hanzi)</label>
+                    <div class="field has-addons">
+                        <div class="control has-icons-left is-expanded">
                             <input
                                 v-model="cardAnswer2"
                                 class="input"
@@ -75,10 +75,13 @@
                                 <i class="fas fa-language"></i>
                             </span>
                         </div>
-                        <p
-                            class="help has-text-grey-light"
-                        >Die Lösung der frage, in Hanzi (chinesische Schriftzeichen)</p>
+                        <p class="control">
+                            <a class="button" @click="cardAnswer2 = cardAnswer2 + '。'">。</a>
+                        </p>
                     </div>
+                    <p
+                        class="help has-text-grey-light"
+                    >Die Lösung der frage, in Hanzi (chinesische Schriftzeichen)</p>
                 </fieldset>
             </section>
             <footer class="modal-card-foot">

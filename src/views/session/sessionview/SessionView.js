@@ -1,5 +1,6 @@
 import types from '../../../store/types';
-import PerformanceRating from '../../../components/performancerating/PerformanceRating.vue'
+import PerformanceRating from '../../../components/performancerating/PerformanceRating.vue';
+import HanziText from '../../../components/hanzitext/HanziText.vue';
 import { mapActions, mapGetters, mapMutations } from 'vuex';
 
 export default {
@@ -16,7 +17,8 @@ export default {
         }
     },
     components: {
-        PerformanceRating
+        PerformanceRating,
+        HanziText
     },
     data: function() {
         return {

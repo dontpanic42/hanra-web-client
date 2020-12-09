@@ -34,7 +34,7 @@
                     </div>
 
                     <div class="columns">
-                        <div class="column is-size-4">{{ card.answerLine2 }}</div>
+                        <div class="column is-size-4"><HanziText :text="card.answerLine2"></HanziText></div>
                     </div>
                 </div>
             </div>
