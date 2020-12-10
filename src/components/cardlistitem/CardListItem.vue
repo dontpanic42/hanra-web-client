@@ -22,7 +22,7 @@
 
             </p>
             <p class="card-footer-item">
-                <button class="button is-danger is-fullwidth" @click="deleteCard">
+                <button class="button is-danger is-outlined is-fullwidth" @click="deleteCard">
                     <span class="icon is-small">
                         <i class="fas fa-trash"></i>
                     </span>

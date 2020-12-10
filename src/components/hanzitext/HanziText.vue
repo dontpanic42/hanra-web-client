@@ -1,6 +1,9 @@
 <template>
     <span class="">
-        <span class="is-clickable hanzi-text-style" v-for="(char, index) in text" :key="index" @click="showCharacter(char)">{{char}}</span>
+        <span v-for="(char, index) in text" :key="index" >
+            <span class="is-clickable hanzi-text-style" v-if="isHanCharacter(char)" @click="showCharacter(char)">{{char}}</span>
+            <span v-else>{{char}}</span>
+        </span>
     </span>
 </template>
 

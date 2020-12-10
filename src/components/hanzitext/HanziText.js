@@ -12,6 +12,10 @@ export default {
     methods: {
         ...mapMutations({
             'showCharacter': types.SOM_SET_SHOW_CHARACTER
-        })
+        }),
+        
+        isHanCharacter(char) {
+            return /\p{Script=Han}/u.test(char);
+        }
     }
 };
