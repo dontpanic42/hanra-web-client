@@ -8,13 +8,9 @@
         </header>
         <div class="card-content" :class="isExpanded ? '' : 'is-hidden'">
             <div class="content has-text-left">
-                <div class="columns">
-                    <div class="column is-size-4">{{ card.answerLine1 }}</div>
-                </div>
-
-                <div class="columns">
-                    <div class="column is-size-4"><HanziText :text="card.answerLine2"></HanziText></div>
-                </div>
+                <div class="is-size-4">{{ card.answerLine1 }}</div>
+                <br />
+                <div class="is-size-4"><HanziText :text="card.answerLine2"></HanziText></div>
             </div>
         </div>
         <footer class="card-footer" :class="isExpanded ? '' : 'is-hidden'">

@@ -17,6 +17,7 @@ const module = {
         createCardModalHasSavingErrorReason: undefined,
 
         cards: undefined,
+        cardsSearchText: '',
         cardsPage: 0,
         cardsNumPages: undefined,
         cardsIsLoading: false,

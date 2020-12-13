@@ -54,6 +54,10 @@ export default {
         state.cardsPage = page;
     },
 
+    setCardsSearchText(state, text) {
+        state.cardsSearchText = text.trim().normalize();
+    },
+
     setCardsNumPages(state, numPages) {
         state.cardsNumPages = numPages;
     },

@@ -16,12 +16,25 @@
                 </article>
 
                 <article
-                    v-if="!hasLoadingError && !isLoading && (!cards || !cards.length)"
+                    v-if="!hasLoadingError && !isLoading && !isSearching && (!cards || !cards.length)"
                     class="message is-info"
                 >
                     <div class="message-body has-text-left">
                         Diese Kartei ist leer. Klicke auf
                         <strong>Neue Karte</strong> um eine Karte zu erstellen.
+                    </div>
+                </article>
+
+                <article
+                    v-if="!hasLoadingError && !isLoading && isSearching && (!cards || !cards.length)"
+                    class="message is-info"
+                >
+                    <div class="message-body has-text-left">
+                        Es wurde
+                        <strong>keine Karte gefunden</strong>
+                        , die
+                        "{{fulltextSearch}}" enthält. Hinweis: Die Suchfunktion durchsucht Fragen
+                        und Antworten.
                     </div>
                 </article>
 
@@ -69,31 +82,47 @@
             </div>
 
             <div class="column is-one-third">
-                <article class="panel">
-                    <p class="panel-heading">Menü</p>
+                <nav class="panel">
+                    <p class="panel-heading">Kartei</p>
                     <p class="panel-tabs">
                         <a class="is-active">Aktionen</a>
                         <a>Statistik</a>
                     </p>
-                    <a class="panel-block is-active" @click="showCreateCardModal(true)">
+                    <div class="panel-block">
+                        <div class="field has-addons">
+                            <p class="control has-icons-left is-expanded">
+                                <input
+                                    v-model="fulltextSearch"
+                                    class="input"
+                                    type="text"
+                                    placeholder="Filter"
+                                />
+                                <span class="icon is-left">
+                                    <i class="fas fa-filter" aria-hidden="true"></i>
+                                </span>
+                            </p>
+                            <p v-if="isSearching" class="control">
+                                <button class="button has-text-grey-light" @click="fulltextSearch = ''">
+                                    <span class="icon">
+                                        <i class="fas fa-times-circle"></i>
+                                    </span>
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+                    <a class="panel-block" @click="showCreateCardModal(true)">
                         <span class="panel-icon">
                             <i class="fas fa-plus-circle" aria-hidden="true"></i>
                         </span>
                         Neue Karte
                     </a>
-                    <div class="panel-block">
-                        <router-link
-                            class="button is-primary is-outlined is-fullwidth"
-                            :to="'/sets/' + currentSet.id + '/learn'"
-                        >
-                            <span class="icon is-small">
-                                <i class="fas fa-stopwatch"></i>
-                            </span>
-
-                            <span>Lernen</span>
-                        </router-link>
-                    </div>
-                </article>
+                    <router-link class="panel-block" :to="'/sets/' + currentSet.id + '/learn'">
+                        <span class="panel-icon">
+                            <i class="fas fa-stopwatch" aria-hidden="true"></i>
+                        </span>
+                        Lernen
+                    </router-link>
+                </nav>
             </div>
         </div>
 

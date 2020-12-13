@@ -34,6 +34,7 @@ export default Object.freeze({
     CURSET_GET_CREATE_CARD_MODAL_IS_SAVING: 'currentset/getCreateCardModalIsSaving',
     CURSET_GET_CREATE_CARD_MODAL_HAS_SAVING_ERROR: 'currentset/getCreateCardModalHasSavingError',
     CURSET_GET_CARDS: 'currentset/getCards',
+    CURSET_GET_CARDS_SEARCH_TEXT: 'currentset/getCardsSearchText',
     CURSET_GET_CARDS_PAGE: 'currentset/getCardsPage',
     CURSET_GET_CARDS_NUM_PAGES: 'currentset/getCardsNumPages',
     CURSET_GET_CARDS_IS_LOADING: 'currentset/getCardsIsLoading',
@@ -42,6 +43,7 @@ export default Object.freeze({
     CURSET_GET_DELETE_CARD_HAS_ERROR: 'currentset/getDeleteCardHasError',
     CURSET_GET_DELETE_CARD_HAS_ERROR_REASON: 'currentset/getDeleteCardHasErrorReason',
     // currentset mutations
+    CURSET_SET_CARDS_SEARCH_TEXT: 'currentset/setCardsSearchText',
     CURSET_SET_CREATE_CARD_MODAL_VISIBLE: 'currentset/showCreateCardModal',
     CURSET_SET_CREATE_CARD_MODAL_UPDATE_VISIBLE: 'currentset/showCreateCardModalUpdate',
     CURSET_SET_CREATE_CARD_MODAL_SAVING: 'currentset/setCreateCardModalIsSaving',

@@ -50,6 +50,8 @@ export default {
         setId = parseInt(setId, 10);
         setId = isNaN(setId) ? parseInt(getters['getCurrentSetId'], 10) : setId;
 
+        let query = getters['getCardsSearchText'];
+
         pageNo = parseInt(pageNo, 10);
 
         try {
@@ -66,7 +68,11 @@ export default {
             commit('setCardsHasLoadingError', false);
 
             let url = appconf.api.baseUrl + appconf.api.ep.getAllCards;
-            const result = await request.get(url, {':setId': setId}, {'page': pageNo, 'pageSize': DEFAULT_PAGE_SIZE});
+            const result = await request.get(url, {':setId': setId}, {
+                'page': pageNo, 
+                'pageSize': DEFAULT_PAGE_SIZE,
+                'query': query
+            });
 
             commit('setCards', result.cards);
             commit('setCardsPage', result.page);

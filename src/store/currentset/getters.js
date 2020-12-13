@@ -44,6 +44,10 @@ export default {
         return state.cardsPage;
     },
 
+    getCardsSearchText(state) {
+        return state.cardsSearchText;
+    },
+
     getCardsNumPages(state) {
         return state.cardsNumPages;
     },
