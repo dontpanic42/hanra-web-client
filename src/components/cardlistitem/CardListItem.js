@@ -9,7 +9,8 @@ export default {
         }
     },
     emits: [
-        'deleteCard'
+        'deleteCard',
+        'editCard'
     ],
     components: {
         HanziText
@@ -27,8 +28,12 @@ export default {
         deleteCard() {
             const confirmation = confirm('Bist du sicher das du diese Karte löschen willst? Sämtlicher Lernvortschritt für diese Karte geht dabei verloren.');
             if(confirmation) {
-                this.$emit('deleteCard', this.card)
+                this.$emit('deleteCard', this.card);
             }
+        },
+
+        editCard() {
+            this.$emit('editCard', this.card);
         }
     }
 };

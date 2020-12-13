@@ -53,10 +53,11 @@
                 </article>
 
                 <CardListItem
-                    v-for="card in cards"
+                    v-for="(card, index) in cards"
                     :key="card.id"
                     :card="card"
                     @delete-card="deleteCard"
+                    @edit-card="showEditCardModal({show: true, index: index})"
                 ></CardListItem>
 
                 <Pagination

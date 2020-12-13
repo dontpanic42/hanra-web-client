@@ -24,6 +24,10 @@ export default {
         return state.createCardModalVisible;
     },
 
+    getCreateCardModalCardIndex(state) {
+        return state.createCardModalCardIndex;
+    },
+
     getCreateCardModalIsSaving(state) {
         return state.createCardModalIsSaving;
     },

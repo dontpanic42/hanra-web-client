@@ -22,8 +22,14 @@ export default {
 
     // Create Card Modal
 
-    setCreateCardModalVisible(state, val) {
+    showCreateCardModal(state, val) {
+        state.createCardModalCardIndex = undefined;
         state.createCardModalVisible = val;
+    },
+
+    showCreateCardModalUpdate(state, {show, index}) {
+        state.createCardModalCardIndex = show ? index : undefined;
+        state.createCardModalVisible = show;
     },
 
     setCreateCardModalIsSaving(state, val) {

@@ -3,7 +3,8 @@
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title">Neue Karte</p>
+                <p v-if="isEditModal" class="modal-card-title">Karte Bearbeiten</p>
+                <p v-else class="modal-card-title">Neue Karte</p>
                 <button class="delete" aria-label="close" @click="cancel()"></button>
             </header>
             <section class="modal-card-body has-text-left">
@@ -96,7 +97,8 @@
                         <i class="fas fa-check"></i>
                     </span>
 
-                    <span>Erstellen</span>
+                    <span v-if="isEditModal">Sichern</span>
+                    <span v-if="!isEditModal">Erstellen</span>
                 </button>
             </footer>
         </div>

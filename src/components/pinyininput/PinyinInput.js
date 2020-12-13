@@ -22,9 +22,9 @@ export default {
         }
     },
     watch: {
-        modelValue: function(newValue) {
+        modelValue(newValue) {
             if(this.formatedValue != newValue) {
-                this.formatedValue = this.format(0, newValue).str;
+                this.formatedValue = this.format(newValue, 0).str;
             }
         }
     },

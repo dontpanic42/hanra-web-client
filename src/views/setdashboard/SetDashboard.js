@@ -32,7 +32,8 @@ export default {
         }),
 
         ...mapMutations({
-            'showCreateCardModal': types.CURSET_SET_CREATE_CARD_MODAL_VISIBLE
+            'showCreateCardModal': types.CURSET_SET_CREATE_CARD_MODAL_VISIBLE,
+            'showEditCardModal': types.CURSET_SET_CREATE_CARD_MODAL_UPDATE_VISIBLE
         }),
 
         showModal() {

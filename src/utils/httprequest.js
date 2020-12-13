@@ -54,6 +54,13 @@ class HttpRequestHelper {
         });
     }
 
+    put(url, params = {}, body = {}) {
+        return this.request(url, 'PUT', {
+            params,
+            body
+        });
+    }
+
     del(url, params = {}) {
         return this.request(url, 'DELETE', {
             params

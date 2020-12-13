@@ -12,6 +12,7 @@ const module = {
 
         createCardModalVisible: false,
         createCardModalIsSaving: false,
+        createCardModalCardIndex: undefined,
         createCardModalHasSavingError: false,
         createCardModalHasSavingErrorReason: undefined,
 

@@ -81,6 +81,13 @@ export default {
         }
     },
 
+    /**
+     * Saves the given card, either
+     *  - as new card, when card.id is not a number
+     *  - as an update to an existing card, when card.id is a number
+     * @param {*} param0 
+     * @param {*} card 
+     */
     async saveCard({ commit, getters, dispatch }, card) {
         const setId = parseInt(getters['getCurrentSetId'], 10);
         
@@ -89,16 +96,20 @@ export default {
             commit('setCreateCardModalHasSavingError', false);
             commit('setCreateCardModalHasSavingErrorReason', undefined);
 
-            let url = appconf.api.baseUrl + appconf.api.ep.createCard;
-            await request.post(url, {':setId': setId}, card);
-
-            // Reload cards
-            dispatch('loadCardListPage', {setId, pageNo: 0});
+            if(typeof(card.id) == 'number') {
+                const url = appconf.api.baseUrl + appconf.api.ep.updateCard;
+                await request.put(url, {':setId': setId, ':cardId': card.id}, card);
+            } else {
+                const url = appconf.api.baseUrl + appconf.api.ep.createCard;
+                await request.post(url, {':setId': setId}, card);
+                // Reload cards
+                dispatch('loadCardListPage', {setId, pageNo: 0});
+            }
 
         } catch (e) {
             commit('setCreateCardModalHasSavingError', true);
             commit('setCreateCardModalHasSavingErrorReason', e);
-            console.log('Error while loading cards', e);
+            console.log('Error while saving cards', e);
         } finally {
             commit('setCreateCardModalIsSaving', false);
         }
