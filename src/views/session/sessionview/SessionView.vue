@@ -2,7 +2,11 @@
     <div v-if="card">
         <div class="card is-fullwidth mb-4">
             <header class="card-header">
-                <p class="card-header-title">Frage</p>
+                <p class="card-header-title">Frage 
+                    &nbsp;
+                    <span v-if="card.type == 'new'" class="tag is-primary">Neu!</span>
+                    <span v-if="card.type != 'new'" class="tag is-light">Wiederholung</span>
+                </p>
             </header>
             <div class="card-content">
                 <div class="content">

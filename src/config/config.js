@@ -11,7 +11,10 @@ export default Object.freeze({
             deleteCard: 'set/:setId/card/:cardId',
 
             getSession: 'set/:setId/sr',
-            setCardReview: 'set/:setId/sr/:cardId'
+            setCardReview: 'set/:setId/sr/:cardId',
+
+            getSettings: 'settings',
+            saveSettings: 'settings'
         }
     }
 });

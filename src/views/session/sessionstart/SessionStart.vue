@@ -36,6 +36,7 @@
         <div class="box">
             <i class="fas fa-stopwatch fa-8x"></i>
             <p class="mt-4 is-size-4">{{ cards.length }} Fragen Bereit!</p>
+            <p class="has-text-grey-light">({{ numNewCards }} neu/{{ numRevCards }} alt)</p>
 
             <router-link
                 class="mt-4 button is-primary"

@@ -72,5 +72,17 @@ export default Object.freeze({
     SOM_GET_CHARARCTER: 'strokeordermodal/getCharacter',
     // strokeordermodal mutations
     SOM_SET_VISIBLE: 'strokeordermodal/setVisible',
-    SOM_SET_SHOW_CHARACTER: 'strokeordermodal/showCharacter'
+    SOM_SET_SHOW_CHARACTER: 'strokeordermodal/showCharacter',
+
+    // User settings
+
+    // actions
+    SETTINGS_LOAD_SETTINGS: 'usersettings/loadSettings',
+    SETTINGS_SAVE_SETTINGS: 'usersettings/saveSettings',
+    // getters
+    SETTINGS_GET_SETTINGS: 'usersettings/getSettings',
+    SETTINGS_IS_LOADING: 'usersettings/isLoading',
+    SETTINGS_HAS_LOADING_ERROR: 'usersettings/hasLoadingError',
+    SETTINGS_IS_SAVING: 'usersettings/isSaving',
+    SETTINGS_HAS_SAVING_ERROR: 'usersettings/hasSavingError'
 });

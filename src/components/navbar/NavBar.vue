@@ -23,17 +23,12 @@
         <div id="navbar-menu" class="navbar-menu" :class="menuVisible ? 'is-active': ''">
             <div class="navbar-start">
                 <router-link class="navbar-item" to="/">Home</router-link>
-                <router-link class="navbar-item" to="/sets">Sets</router-link>
-                <router-link class="navbar-item" to="/about">About</router-link>
+                <router-link class="navbar-item" to="/sets">Karteien</router-link>
+                <router-link class="navbar-item" to="/settings">Einstellungen</router-link>
             </div>
 
             <div class="navbar-end">
                 <div class="navbar-item">
-                    <p class="control has-icons-right">
-                        <input class="input" type="search" placeholder="Search..." />
-                        <span class="icon is-small is-right">
-                        </span>
-                    </p>
                 </div>
             </div>
         </div>

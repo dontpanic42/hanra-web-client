@@ -8,4 +8,7 @@ import '@fortawesome/fontawesome-free/css/all.css';
 
 const app = createApp(App);
 app.config.devtools = true;
-app.use(store).use(router).mount('#app');
+app
+    .use(store)
+    .use(router)
+    .mount('#app');
