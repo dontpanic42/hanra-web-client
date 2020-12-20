@@ -1,9 +1,10 @@
 <template>
     <nav class="navbar" role="navigation" :class="darkmode ? 'is-dark' : 'is-light'" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
-                <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
-            </a>
+            <router-link to="/" class="navbar-item">
+                <img v-if="!darkmode" src="@/assets/img/nav-logo-dark.png" width="112" height="28" />
+                <img v-else src="@/assets/img/nav-logo-light.png" width="112" height="28" />
+            </router-link>
 
             <a
                 role="button"
