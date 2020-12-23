@@ -37,6 +37,7 @@ export default Object.freeze({
     CURSET_GET_CARDS_SEARCH_TEXT: 'currentset/getCardsSearchText',
     CURSET_GET_CARDS_PAGE: 'currentset/getCardsPage',
     CURSET_GET_CARDS_NUM_PAGES: 'currentset/getCardsNumPages',
+    CURSET_GET_CARDS_NUM_TOTAL: 'currentset/getCardsNumTotal',
     CURSET_GET_CARDS_IS_LOADING: 'currentset/getCardsIsLoading',
     CURSET_GET_CARDS_HAS_LOADING_ERROR: 'currentset/getCardsHasLoadingError',
     CURSET_GET_DELETE_CARD_IS_LOADING: 'currentset/getDeleteCardIsLoading',

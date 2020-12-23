@@ -75,6 +75,7 @@ export default {
             'cardsPage': types.CURSET_GET_CARDS_PAGE,
             'cardsSearchText': types.CURSET_GET_CARDS_SEARCH_TEXT,
             'cardsNumPages': types.CURSET_GET_CARDS_NUM_PAGES,
+            'cardsNumTotal': types.CURSET_GET_CARDS_NUM_TOTAL,
             'cardsHasLoadingError': types.CURSET_GET_CARDS_HAS_LOADING_ERROR,
             'cardsHasDeletingError': types.CURSET_GET_DELETE_CARD_HAS_ERROR
         }),

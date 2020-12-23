@@ -43,6 +43,7 @@ export default {
     getCardsPage(state) {
         return state.cardsPage;
     },
+    
 
     getCardsSearchText(state) {
         return state.cardsSearchText;
@@ -50,6 +51,10 @@ export default {
 
     getCardsNumPages(state) {
         return state.cardsNumPages;
+    },
+
+    getCardsNumTotal(state) {
+        return state.cardsNumTotal;
     },
 
     getCardsIsLoading(state) {

@@ -6,7 +6,7 @@
 
         <div class="card-content">
             <p class="title is-4">{{title}}</p>
-            <p class="subtitle is-6">1203 mal aufgerufen</p>
+            <p v-if="description" class="subtitle is-6">{{ description }}</p>
         </div>
 
         <footer class="card-footer">

@@ -62,6 +62,10 @@ export default {
         state.cardsNumPages = numPages;
     },
 
+    setCardsNumTotal(state, numCards) {
+        state.cardsNumTotal = numCards;
+    },
+
     setCardsIsLoading(state, val) {
         state.cardsIsLoading = val;
     },

@@ -77,6 +77,7 @@ export default {
             commit('setCards', result.cards);
             commit('setCardsPage', result.page);
             commit('setCardsNumPages', result.numPages);
+            commit('setCardsNumTotal', result.numCards);
 
         } catch (e) {
             commit('setCardsHasLoadingError', true);

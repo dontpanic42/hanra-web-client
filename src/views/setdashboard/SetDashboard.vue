@@ -1,7 +1,19 @@
 <template>
     <div class="container">
-        <h1 class="title is-3 has-text-left">{{ currentSet.setName }}</h1>
-        <h2 class="subtitle is-5 has-text-left">{{ currentSet.setDescription }}</h2>
+        <h1 class="title is-3 has-text-left">{{ currentSet.setName }} 
+            <div class="tag is-info">
+                <span v-if="isSearching">
+                    <i class="fas fa-filter"></i>&nbsp;
+                </span>
+                <span v-if="cardsNumTotal == 1">
+                    {{ cardsNumTotal }} Karte
+                </span>
+                <span v-if="cardsNumTotal > 1">
+                    {{ cardsNumTotal }} Karten
+                </span>
+            </div>
+            </h1>
+        <h2 v-if="currentSet.setDescription" class="subtitle is-5 has-text-left">{{ currentSet.setDescription }}</h2>
 
         <div class="columns">
             <div class="column">
@@ -83,7 +95,7 @@
 
             <div class="column is-one-third">
                 <nav class="panel">
-                    <p class="panel-heading">Kartei</p>
+                    <p class="panel-heading">Optionen</p>
                     <p class="panel-tabs">
                         <a class="is-active">Aktionen</a>
                         <a>Statistik</a>

@@ -26,9 +26,6 @@ export default {
         }
     },
     methods: {
-        ...mapActions({
-            //'loadSession': types.SRS_LOAD_SESSION
-        }),
         showAnswer: function () {
             this.isRevealed = true;
         }

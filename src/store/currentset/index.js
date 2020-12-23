@@ -20,6 +20,7 @@ const module = {
         cardsSearchText: '',
         cardsPage: 0,
         cardsNumPages: undefined,
+        cardsNumTotal: 0,
         cardsIsLoading: false,
         cardsHasLoadingError: false,
         cardsHasLoadingErrorReason: undefined,

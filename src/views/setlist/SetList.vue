@@ -48,7 +48,7 @@
                     :key="item.id"
                     class="column is-one-third-desktop is-half-tablet"
                 >
-                    <SetCard :title="item.setName" :id="item.id"></SetCard>
+                    <SetCard :title="item.setName" :description="item.setDescription" :id="item.id"></SetCard>
                 </div>
             </div>
         </div>
