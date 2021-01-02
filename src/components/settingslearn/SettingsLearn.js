@@ -8,10 +8,12 @@ export default {
         return {
             srSessionSize: 0,
             srSessionNewItemsRatio: 0,
-            srSessionNewCutoffDays: 0
+            srSessionNewCutoffDays: 0,
+            showSucessBanner: false
         }
     },
     async created() {
+        this.showSucessBanner = false;
         await this.loadSettings();
         this.reset();
     },
@@ -29,6 +31,8 @@ export default {
         
         async save() {
             if(!this.hasInputError) {
+                this.showSucessBanner = false;
+
                 const settings = {
                     srSessionSize: this.srSessionSize,
                     srSessionNewItemsRatio: this.srSessionNewItemsRatio / 100.0,
@@ -36,6 +40,10 @@ export default {
                 }
                 
                 await this.saveSettings(settings)
+                
+                if(!this.hasSavingError) {
+                    this.showSucessBanner = true;
+                }
                 
                 this.reset();
             }

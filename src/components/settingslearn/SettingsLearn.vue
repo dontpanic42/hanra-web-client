@@ -18,6 +18,15 @@
             </div>
         </article>
 
+        <article v-if="showSucessBanner" class="message is-success">
+            <div class="message-body has-text-left">
+                <p class="mb-2">
+                    <strong>Gespeichert</strong>.
+                    Deine Änderungen wurden erfolgreich gespeichert.
+                </p>
+            </div>
+        </article>
+
         <fieldset :disabled="isLoading || isSaving || hasLoadingError" class="has-text-left">
             <div class="field">
                 <label class="label">Max. Karten pro Lern-Session</label>
