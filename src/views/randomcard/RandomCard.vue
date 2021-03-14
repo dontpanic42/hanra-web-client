@@ -100,7 +100,16 @@
             </div>
             <footer class="card-footer" :class="isRevealed ? 'is-hidden' : ''">
                 <div class="card-footer-item has-text-right">
-                    <button class="button is-primary is-outlined" @click="showAnswer()">
+                    <button class="button is-primary is-outlined" @click="next(currentType)">
+                        <span class="icon is-small">
+                            <i class="fas fa-random"></i>
+                        </span>
+
+                        <span>Nächste</span>
+                    </button>
+                </div>
+                <div class="card-footer-item has-text-right">
+                    <button class="button is-primary" @click="showAnswer()">
                         <span class="icon is-small">
                             <i class="fas fa-check"></i>
                         </span>
