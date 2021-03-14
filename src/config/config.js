@@ -14,7 +14,9 @@ export default Object.freeze({
             setCardReview: 'set/:setId/sr/:cardId',
 
             getSettings: 'settings',
-            saveSettings: 'settings'
+            saveSettings: 'settings',
+
+            getRandomCard: 'set/:setId/random'
         }
     }
 });

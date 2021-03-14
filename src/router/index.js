@@ -73,6 +73,13 @@ const routes = [
                         },
                     },
                     {
+                        path: 'random/:type',
+                        component: () => import(/* webpackChunkName: "randomcard" */ '../views/randomcard/RandomCard.vue'),
+                        meta: {
+                            breadCrumb: 'Zufall'
+                        }
+                    },
+                    {
                         path: 'learn',
                         component: () => import(/* webpackChunkName: "startsession" */ '../views/session/sessionstart/SessionStart.vue'),
                         meta: {

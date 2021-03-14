@@ -85,5 +85,14 @@ export default Object.freeze({
     SETTINGS_IS_LOADING: 'usersettings/isLoading',
     SETTINGS_HAS_LOADING_ERROR: 'usersettings/hasLoadingError',
     SETTINGS_IS_SAVING: 'usersettings/isSaving',
-    SETTINGS_HAS_SAVING_ERROR: 'usersettings/hasSavingError'
+    SETTINGS_HAS_SAVING_ERROR: 'usersettings/hasSavingError',
+
+    // Random Card
+    // actions
+    RND_LOAD_CARD: 'randomcard/loadCard',
+    // getter
+    RND_GET_CARD: 'randomcard/getCard',
+    RND_GET_HAS_CARD: 'randomcard/getHasCard',
+    RND_GET_IS_LOADING: 'randomcard/getIsLoading',
+    RND_GET_HAS_LOADING_ERROR: 'randomcard/getHasLoadingError',
 });

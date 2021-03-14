@@ -134,6 +134,18 @@
                         </span>
                         Lernen
                     </router-link>
+                    <router-link class="panel-block" :to="'/sets/' + currentSet.id + '/random/new'">
+                        <span class="panel-icon">
+                            <i class="fas fa-random" aria-hidden="true"></i>
+                        </span>
+                        Zufällig
+                    </router-link>
+                    <router-link class="panel-block" :to="'/sets/' + currentSet.id + '/random/new'">
+                        <span class="panel-icon">
+                            <i class="fas fa-eye" aria-hidden="true"></i>
+                        </span>
+                        Zufällig (nur Neue)
+                    </router-link>
                 </nav>
             </div>
         </div>
