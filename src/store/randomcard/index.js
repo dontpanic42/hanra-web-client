@@ -4,8 +4,9 @@ import actions from './actions';
 
 const module = {
     state: {
-        card: {},
-        hasCard: false,
+        cards: [],
+
+        currentCardIndex: 0,
         
         isLoading: false,
         hasLoadingError: false,

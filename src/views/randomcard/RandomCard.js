@@ -32,11 +32,7 @@ export default {
     },
     methods: {
         ...mapActions({
-            'loadCard': types.RND_LOAD_CARD,
-        }),
-
-        ...mapMutations({
-            'setType': types.RND_SET_TYPE
+            'loadCard': types.RND_FETCH_CARD,
         }),
 
         showAnswer() {

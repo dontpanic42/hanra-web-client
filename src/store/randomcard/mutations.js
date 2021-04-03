@@ -1,10 +1,14 @@
 export default {
-    setCard(state, card) {
-        state.card = card;
+    setCards(state, cards) {
+        state.cards = cards;
     },
 
-    setHasCard(state, value) {
-        state.hasCard = value;
+    setCurrentCardIndex(state, index) {
+        state.currentCardIndex = index;
+    },
+
+    setCurrentCardType(state, type) {
+        state.currentCardType = type;
     },
 
     setIsLoading(state, isLoading) {

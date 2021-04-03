@@ -89,7 +89,7 @@ export default Object.freeze({
 
     // Random Card
     // actions
-    RND_LOAD_CARD: 'randomcard/loadCard',
+    RND_FETCH_CARD: 'randomcard/fetchCard',
     // getter
     RND_GET_CARD: 'randomcard/getCard',
     RND_GET_HAS_CARD: 'randomcard/getHasCard',

@@ -1,10 +1,23 @@
 export default {
+    getAllCards(state) {
+        return state.cards;
+    },
+
     getCard(state) {
-        return state.card;
+        const index = state.currentCardIndex;
+        return state.cards[index];
+    },
+
+    getCurrentCardIndex(state) {
+        return state.currentCardIndex;
+    },
+
+    getCurrentCardType(state) {
+        return state.currentCardType;
     },
 
     getHasCard(state) {
-        return state.hasCard;
+        return state.currentCardIndex < state.cards.length;
     },
 
     getIsLoading(state) {
