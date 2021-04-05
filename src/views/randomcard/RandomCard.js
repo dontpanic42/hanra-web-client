@@ -62,7 +62,9 @@ export default {
             'card': types.RND_GET_CARD,
             'hasCard': types.RND_GET_HAS_CARD,
             'isLoading': types.RND_GET_IS_LOADING,
-            'hasLoadingError': types.RND_GET_HAS_LOADING_ERROR
+            'hasLoadingError': types.RND_GET_HAS_LOADING_ERROR,
+            'currentCardIndex': types.RND_GET_CURRENT_CARD_INDEX,
+            'numCards': types.RND_GET_NUM_CARDS
         }),
 
         currentSet() {

@@ -12,6 +12,10 @@ export default {
         return state.currentCardIndex;
     },
 
+    getNumCards(state) {
+        return (state.cards || []).length
+    },
+
     getCurrentCardType(state) {
         return state.currentCardType;
     },

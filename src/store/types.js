@@ -95,4 +95,6 @@ export default Object.freeze({
     RND_GET_HAS_CARD: 'randomcard/getHasCard',
     RND_GET_IS_LOADING: 'randomcard/getIsLoading',
     RND_GET_HAS_LOADING_ERROR: 'randomcard/getHasLoadingError',
+    RND_GET_CURRENT_CARD_INDEX: 'randomcard/getCurrentCardIndex',
+    RND_GET_NUM_CARDS: 'randomcard/getNumCards',
 });

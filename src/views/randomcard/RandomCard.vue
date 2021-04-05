@@ -4,7 +4,7 @@
             <div class="message-body has-text-left">
                 <p>
                     <span class="icon is-small"> <i class="fas fa-random"></i></span> &nbsp;
-                    Zeige eine <strong>zufällige <span v-if="currentType == 'new'">neue</span> Karte</strong>
+                    Zeige <strong>zufällige <span v-if="currentType == 'new'">neue</span></strong> Karte <strong>{{ currentCardIndex + 1 }}/{{ numCards }}</strong>
                 </p>
             </div>
         </article>   
