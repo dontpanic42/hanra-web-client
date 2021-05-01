@@ -1,4 +1,5 @@
-import HanziText from '../hanzitext/HanziText.vue';
+import CardContentTable from '../cardcontenttable/CardContentTable.vue';
+import CardMetaTags from '../cardmetatags/CardMetaTags.vue';
 
 export default {
     name: 'CardListItem',
@@ -13,7 +14,8 @@ export default {
         'editCard'
     ],
     components: {
-        HanziText
+        CardContentTable,
+        CardMetaTags
     },
     data: function() {
         return {

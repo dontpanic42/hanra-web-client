@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <h1 class="title is-3 has-text-left">{{ currentSet.setName }} 
-            <div class="tag is-info">
+            <div v-if="cardsNumTotal > 0" class="tag is-info">
                 <span v-if="isSearching">
                     <i class="fas fa-filter"></i>&nbsp;
                 </span>
@@ -17,7 +17,7 @@
 
         <div class="columns">
             <div class="column">
-                <article class="message">
+                <article class="message is-hidden-mobile">
                     <div class="message-body has-text-left">
                         <p class="mb-2">
                             Du befindest dich jetzt in der

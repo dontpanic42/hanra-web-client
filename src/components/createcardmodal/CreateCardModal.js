@@ -8,8 +8,12 @@ export default {
     data: () => {
         return {
             cardQuestion: '',
-            cardAnswer1: '',
-            cardAnswer2: ''
+            cardAnswerWordPinyin: '',
+            cardAnswerWordHanzi: '',
+            cardAnswerMeasurePinyin: '',
+            cardAnswerMeasureHanzi: '',
+            cardAnswerExample: '',
+            activeTab: 'word'
         }
     },
     components: {
@@ -28,8 +32,13 @@ export default {
 
         clear() {
             this.cardQuestion = '';
-            this.cardAnswer1 = '';
-            this.cardAnswer2 = '';
+            this.cardAnswerWordPinyin = '';
+            this.cardAnswerWordHanzi = '';
+            this.cardAnswerMeasurePinyin = '';
+            this.cardAnswerMeasureHanzi = '';
+            this.cardAnswerExample = '';
+
+            this.setActiveTab('word');
         },
 
         cancel() {
@@ -39,12 +48,27 @@ export default {
             }
         },
 
+        setActiveTab(tab) {
+            this.activeTab = tab;
+        },
+
+        normalize(value) {
+            if(typeof(value) === 'string') {
+                return value.normalize();
+            }
+
+            return value;
+        },
+
         async save() {
             await this.saveCard({
                 id: this.isEditModal ? this.cards[this.cardIndex].id : undefined,
                 question: this.cardQuestion,
-                answerLine1: this.cardAnswer1,
-                answerLine2: this.cardAnswer2.normalize()
+                answerWordPinyin: this.cardAnswerWordPinyin,
+                answerWordHanzi: this.normalize(this.cardAnswerWordHanzi),
+                answerMeasurePinyin: this.cardAnswerMeasurePinyin,
+                answerMeasureHanzi: this.normalize(this.cardAnswerMeasureHanzi),
+                answerExample: this.normalize(this.cardAnswerExample)
             });
 
             if(!this.hasSavingError) {
@@ -53,8 +77,11 @@ export default {
                 // to the state so they are displayed elsewhere
                 if(this.isEditModal) {
                     this.cards[this.cardIndex].question = this.cardQuestion;
-                    this.cards[this.cardIndex].answerLine1 = this.cardAnswer1;
-                    this.cards[this.cardIndex].answerLine2 = this.cardAnswer2;
+                    this.cards[this.cardIndex].answerWordPinyin = this.cardAnswerWordPinyin;
+                    this.cards[this.cardIndex].answerWordHanzi = this.cardAnswerWordHanzi;
+                    this.cards[this.cardIndex].answerMeasurePinyin = this.cardAnswerMeasurePinyin;
+                    this.cards[this.cardIndex].answerMeasureHanzi = this.cardAnswerMeasureHanzi;
+                    this.cards[this.cardIndex].answerExample = this.cardAnswerExample;
                 }
 
                 this.clear();
@@ -68,8 +95,11 @@ export default {
                 // of the reference card to the form
                 if(this.isEditModal) {
                     this.cardQuestion = this.cards[this.cardIndex].question;
-                    this.cardAnswer1 = this.cards[this.cardIndex].answerLine1;
-                    this.cardAnswer2 = this.cards[this.cardIndex].answerLine2;
+                    this.cardAnswerWordPinyin = this.cards[this.cardIndex].answerWordPinyin;
+                    this.cardAnswerWordHanzi = this.cards[this.cardIndex].answerWordHanzi;
+                    this.cardAnswerMeasurePinyin = this.cards[this.cardIndex].answerMeasurePinyin;
+                    this.cardAnswerMeasureHanzi = this.cards[this.cardIndex].answerMeasureHanzi;
+                    this.cardAnswerExample = this.cards[this.cardIndex].answerExample;
                 }
 
                 // Focus the first item 
@@ -105,8 +135,8 @@ export default {
 
         inputError() {
             return  this.cardQuestion.trim().length < 1 ||
-                    this.cardAnswer1.trim().length < 1 || 
-                    this.cardAnswer2.trim().length < 1; 
+                    this.cardAnswerWordPinyin.trim().length < 1 || 
+                    this.cardAnswerWordHanzi.trim().length < 1; 
         }
     }
 };

@@ -7,15 +7,8 @@
                 <p v-else class="modal-card-title">Neue Karte</p>
                 <button class="delete" aria-label="close" @click="cancel()"></button>
             </header>
+
             <section class="modal-card-body has-text-left">
-                <article class="message">
-                    <div class="message-body has-text-left">
-                        <p>
-                            Fülle die Felder unten um eine neue Karte in der Kartei
-                            <strong>{{ set.setName }}</strong> anzulegen.
-                        </p>
-                    </div>
-                </article>
 
                 <article v-if="hasSavingError" class="message is-danger">
                     <div class="message-body has-text-left">
@@ -26,7 +19,14 @@
                     </div>
                 </article>
 
-                <fieldset :disabled="isSaving">
+                <div class="tabs">
+                    <ul>
+                        <li :class="activeTab == 'word' ? 'is-active' : ''" @click="setActiveTab('word')"><a>Wort</a></li>
+                        <li :class="activeTab == 'meta' ? 'is-active' : ''" @click="setActiveTab('meta')"><a>Meta &amp; Beispiel</a></li>
+                    </ul>
+                </div>
+
+                <fieldset v-if="activeTab == 'word'" :disabled="isSaving">
                     <div class="field">
                         <label class="label">Frage</label>
                         <div class="control has-icons-left">
@@ -49,7 +49,7 @@
                         <label class="label">Antwort (Pinyin)</label>
                         <div class="control has-icons-left">
                             <PinyinInput
-                                v-model="cardAnswer1"
+                                v-model="cardAnswerWordPinyin"
                                 class="input"
                                 type="text"
                                 placeholder="z.B. Wǒ hěn hǎo"
@@ -67,7 +67,7 @@
                     <div class="field has-addons">
                         <div class="control has-icons-left is-expanded">
                             <input
-                                v-model="cardAnswer2"
+                                v-model="cardAnswerWordHanzi"
                                 class="input"
                                 type="text"
                                 placeholder="z.B. Wo hen hao"
@@ -77,12 +77,66 @@
                             </span>
                         </div>
                         <p class="control">
-                            <a class="button" @click="cardAnswer2 = cardAnswer2 + '。'">。</a>
+                            <a class="button" @click="cardAnswerWordHanzi = cardAnswerWordHanzi + '。'">。</a>
                         </p>
                     </div>
                     <p
                         class="help has-text-grey-light"
                     >Die Lösung der frage, in Hanzi (chinesische Schriftzeichen)</p>
+                </fieldset>
+
+                <fieldset v-if="activeTab == 'meta'" :disabled="isSaving">
+                    <div class="field">
+                        <label class="label">Zählwort (Pinyin)</label>
+                        <div class="control has-icons-left">
+                            <PinyinInput
+                                v-model="cardAnswerMeasurePinyin"
+                                class="input"
+                                type="text"
+                                placeholder="z.B. zhi"
+                            />
+                            <span class="icon is-left">
+                                <i class="fas fa-hashtag"></i>
+                            </span>
+                        </div>
+                        <p
+                            class="help has-text-grey-light"
+                        >Zählwort (Optional)</p>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Zählwort (Hanzi)</label>
+                        <div class="control has-icons-left">
+                            <input
+                                v-model="cardAnswerMeasureHanzi"
+                                class="input"
+                                type="text"
+                                placeholder="z.B. 只"
+                            />
+                            <span class="icon is-left">
+                                <i class="fas fa-language"></i>
+                            </span>
+                        </div>
+                        <p
+                            class="help has-text-grey-light"
+                        >Das Zählwort, in Hanzi (chinesische Schriftzeichen)</p>
+                    </div>
+
+                    
+                    <div class="field">
+                        <label class="label">Beispiel</label>
+                        <div class="control">
+                            <textarea
+                                v-model="cardAnswerExample"
+                                class="textarea"
+                                placeholder="z.B. 只"
+                                rows="2"
+                            />
+                        </div>
+                        <p
+                            class="help has-text-grey-light"
+                        >Ein Beispielsatz um die Wortverwendung zu illustrieren.</p>
+                    </div>
                 </fieldset>
             </section>
             <footer class="modal-card-foot">

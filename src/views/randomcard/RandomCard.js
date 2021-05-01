@@ -1,6 +1,7 @@
 import types from '../../store/types';
-import HanziText from '../../components/hanzitext/HanziText.vue';
-import { mapActions, mapGetters, mapMutations } from 'vuex';
+import CardContentTable from '../../components/cardcontenttable/CardContentTable.vue';
+import CardMetaTags from '../../components/cardmetatags/CardMetaTags.vue';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
     name: 'RandomCard',
@@ -9,15 +10,11 @@ export default {
         return {}
     },
     created() {
-        // if(!this.card) {
-        //     // On page reload the session is lost, so we need to start from the beginning
-        //     console.warn('No card found, redirecting to session start!');
-        //     this.$router.replace(`/sets/${this.$route.params.setId}/learn`);
-        // }
         this.reloadCard();
     },
     components: {
-        HanziText
+        CardContentTable,
+        CardMetaTags
     },
     data: function() {
         return {

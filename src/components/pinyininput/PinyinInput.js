@@ -21,6 +21,12 @@ export default {
             formatedValue: ''
         }
     },
+    mounted() {
+        // Watch does not trigger on first mount, so we'll need to set the value manually
+        if(this.modelValue) {
+            this.formatedValue = this.format(this.modelValue, 0).str;
+        }
+    },
     watch: {
         modelValue(newValue) {
             if(this.formatedValue != newValue) {

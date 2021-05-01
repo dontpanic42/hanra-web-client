@@ -1,18 +1,21 @@
 <template>
     <div class="card is-fullwidth mb-4">
         <header class="card-header">
-            <p class="card-header-title">{{ card.question }}</p>
+            <p class="card-header-title has-text-left">{{ card.question }}
+                &nbsp;<CardMetaTags :card="card"></CardMetaTags>
+            </p>
             <a class="card-header-icon" @click="toggleVisible()">
                 <i class="fas fa-angle-down" aria-hidden="true"></i>
             </a>
         </header>
+
         <div class="card-content" :class="isExpanded ? '' : 'is-hidden'">
             <div class="content has-text-left">
-                <div class="is-size-4">{{ card.answerLine1 }}</div>
-                <br />
-                <div class="is-size-4"><HanziText :text="card.answerLine2"></HanziText></div>
+                <CardContentTable :card="card"></CardContentTable>
             </div>
-        </div>
+        </div> 
+
+
         <footer class="card-footer" :class="isExpanded ? '' : 'is-hidden'">
             <p class="card-footer-item">
                 <button class="button is-danger is-outlined is-fullwidth" @click="deleteCard">

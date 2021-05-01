@@ -1,0 +1,28 @@
+div.card-content {
+    padding: 12px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: fit-content(50%) auto;
+    gap: 0;
+}
+
+.grid-column-name {
+    grid-column: 1;
+    border-top: 1px solid #EEEEEE;
+    border-right: 1px solid #EEEEEE;
+    padding: 5px 10px;
+}
+
+.grid-column-content {
+    grid-column: 2;
+    border-top: 1px solid #EEEEEE;
+    padding: 5px 10px;
+}
+
+.grid-container .grid-column:nth-child(1),
+.grid-container .grid-column:nth-child(2) {
+    border-top: 0;
+}
+

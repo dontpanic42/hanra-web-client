@@ -1,7 +1,8 @@
 import types from '../../../store/types';
 import PerformanceRating from '../../../components/performancerating/PerformanceRating.vue';
-import HanziText from '../../../components/hanzitext/HanziText.vue';
-import { mapActions, mapGetters, mapMutations } from 'vuex';
+import CardContentTable from '../../../components/cardcontenttable/CardContentTable.vue';
+import CardMetaTags from '../../../components/cardmetatags/CardMetaTags.vue';
+import { mapGetters } from 'vuex';
 
 export default {
     name: 'SessionView',
@@ -18,7 +19,8 @@ export default {
     },
     components: {
         PerformanceRating,
-        HanziText
+        CardContentTable,
+        CardMetaTags
     },
     data: function() {
         return {

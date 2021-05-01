@@ -89,13 +89,12 @@
                 <p class="card-header-title">
                     Frage
                     &nbsp;
-                    <span v-if="card.type == 'new'" class="tag is-primary">Neu!</span>
-                    <span v-if="card.type != 'new'" class="tag is-light">Wiederholung</span>
+                    <CardMetaTags :card="card" />
                 </p>
             </header>
             <div class="card-content">
                 <div class="content">
-                    <p class="is-size-2">{{ card.question }}</p>
+                    <p class="is-size-4">{{ card.question }}</p>
                 </div>
             </div>
             <footer class="card-footer" :class="isRevealed ? 'is-hidden' : ''">
@@ -125,15 +124,9 @@
                 <p class="card-header-title">Antwort</p>
             </header>
 
-            <div class="card-content">
+            <div class="card-content content-table">
                 <div class="content">
-                    <div class="columns">
-                        <div class="column is-size-4">{{ card.answerLine1 }}</div>
-                    </div>
-
-                    <div class="columns">
-                        <div class="column is-size-4"><HanziText :text="card.answerLine2"></HanziText></div>
-                    </div>
+                    <CardContentTable :card="card" />
                 </div>
             </div>
 
