@@ -44,8 +44,6 @@ export default {
             });
         },
         next(type) {
-            console.log('calling next card with', type);
-
             if(type == this.currentType) {
                 this.reloadCard();
             } else {
@@ -74,6 +72,11 @@ export default {
 
         hasNoNewCard() {
             return false;
+        },
+
+        hasMeasureWord() {
+            return  typeof(this.card.answerMeasureHanzi) == 'string' && 
+                    this.card.answerMeasureHanzi.trim().length;
         }
     }
 };

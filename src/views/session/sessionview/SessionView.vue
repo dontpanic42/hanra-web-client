@@ -9,7 +9,12 @@
             </header>
             <div class="card-content">
                 <div class="content">
-                    <p class="is-size-4">{{ card.question }}</p>
+                    <p class="is-size-4">
+                        <span v-if="hasMeasureWord" class="has-text-grey-lighter">
+                            <i class="fas fa-hashtag"></i>&nbsp;
+                        </span>
+                        {{ card.question }}
+                    </p>
                 </div>
             </div>
             <footer class="card-footer" :class="isRevealed ? 'is-hidden' : ''">

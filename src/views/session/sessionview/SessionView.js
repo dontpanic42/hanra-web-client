@@ -35,6 +35,11 @@ export default {
     computed: {
         ...mapGetters({
             'card': types.SRS_GET_CURRENT_CARD
-        })
+        }),
+
+        hasMeasureWord() {
+            return  typeof(this.card.answerMeasureHanzi) == 'string' && 
+                    this.card.answerMeasureHanzi.trim().length;
+        }
     }
 };
