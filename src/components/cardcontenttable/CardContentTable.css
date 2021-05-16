@@ -26,3 +26,6 @@ div.card-content {
     border-top: 0;
 }
 
+.preserve-white-space {
+    white-space: pre-wrap;
+}

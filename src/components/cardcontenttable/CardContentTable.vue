@@ -12,7 +12,7 @@
             <span v-if="card.answerMeasurePinyin">({{ card.answerMeasurePinyin }})</span>
         </div>
         <div class="grid-column-name" v-if="card.answerExample">Beispiel</div>
-        <div class="grid-column-content" v-if="card.answerExample">
+        <div class="grid-column-content preserve-white-space" v-if="card.answerExample">
             <HanziText :text="card.answerExample"></HanziText>
         </div>
     </div>
