@@ -8,7 +8,7 @@
         </div>
         <div class="grid-column-name" v-if="card.answerMeasureHanzi">Zählwort</div>
         <div class="grid-column-content" v-if="card.answerMeasureHanzi">
-            {{ card.answerMeasureHanzi }} 
+            <HanziText :text="card.answerMeasureHanzi"></HanziText> 
             <span v-if="card.answerMeasurePinyin">({{ card.answerMeasurePinyin }})</span>
         </div>
         <div class="grid-column-name" v-if="card.answerExample">Beispiel</div>
