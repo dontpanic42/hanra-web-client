@@ -2,7 +2,9 @@
     <div v-if="card">
         <div class="card is-fullwidth mb-4">
             <header class="card-header">
-                <p class="card-header-title">Frage 
+                <p class="card-header-title">
+                    <span v-if="card.isReview">Review</span>
+                    <span v-if="!card.isReview">Karte</span> 
                     &nbsp;
                     <CardMetaTags :card="card" />
                 </p>
@@ -56,6 +58,14 @@
                 </p>
             </footer>
         </div>
+        
+        <article class="message is-small">
+            <div class="message-body has-text-left">
+                <strong>Bald geschafft: </strong>
+                <span v-if="cardsLeft > 0">Noch {{ cardsLeft }} von {{ numCards }} Karten.</span>
+                <span v-if="cardsLeft <= 0">Letzte Karte!</span>
+            </div>
+        </article>
     </div>
 </template>
 

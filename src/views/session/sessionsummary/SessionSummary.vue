@@ -15,7 +15,7 @@
                     <tbody>
                         <tr>
                             <td>Karten</td>
-                            <td>{{cards.length}}</td>
+                            <td>{{statNumCards}}</td>
                         </tr>
                         <tr>
                             <td>Durchschnitt</td>
@@ -26,7 +26,7 @@
                         </tr>
                         <tr>
                             <td>Gewusst</td>
-                            <td>{{ statNumCorrect }} von {{cards.length}}</td>
+                            <td>{{ statNumCorrect }} von {{statNumCards}}</td>
                         </tr>
                     </tbody>
                 </table>

@@ -9,7 +9,8 @@
 
         <div class="card is-fullwidth mb-4">
             <header class="card-header">
-                <p class="card-header-title">Antwort Bewerten</p>
+                <p v-if="!card.isReview" class="card-header-title">Antwort Bewerten</p>
+                <p v-if="card.isReview" class="card-header-title">Review Bewerten</p>
             </header>
 
             <div class="card-content">
@@ -51,6 +52,7 @@
                 </p>
             </footer>
         </div>
+
         <br />
         <article class="message has-text-left is-info">
             <div class="message-body">
@@ -61,23 +63,27 @@
                         Weniger als vier Sterne bedeutet du hast einen Fehler gemacht.
                     </p>
                     <div class="mb-2">
-                        <strong>1 Stern:</strong>Totaler Blackout
+                        <strong>1 Stern:</strong> Totaler Blackout (Karte wird noch einmal vorgelegt)
                     </div>
                     <div class="mb-2">
-                        <strong>2 Sterne:</strong>Nicht gewusst, aber nach langem Überlegen an die Lösung erinnert
+                        <strong>2 Sterne:</strong> Nicht gewusst, aber nach langem Überlegen an die Lösung erinnert (Karte wird noch einmal vorgelegt)
                     </div>
                     <div class="mb-2">
-                        <strong>3 Sterne:</strong>Nicht gewusst, aber sofort an die Lösung erinnert
+                        <strong>3 Sterne:</strong> Nicht gewusst, aber sofort an die Lösung erinnert (Karte wird noch einmal vorgelegt)
                     </div>
                     <div class="mb-2">
-                        <strong>4 Sterne:</strong>Gewusst, aber nach langem Überlegen
+                        <strong>4 Sterne:</strong> Gewusst, aber nach langem Überlegen (Karte wird noch einmal vorgelegt)
                     </div>
                     <div class="mb-2">
-                        <strong>5 Sterne:</strong>Gewusst, nach kurzem Überlegen
+                        <strong>5 Sterne:</strong> Gewusst, nach kurzem Überlegen
                     </div>
                     <div class="mb-2">
-                        <strong>6 Sterne:</strong>Sofort gewusst
+                        <strong>6 Sterne:</strong> Sofort gewusst
                     </div>
+                    <p>
+                        Je nach dem wie du die Karte bewertet hast, wird sie dir am Ende deiner Lern-Siztung noch einmal vorgelegt ("Review").
+                        Egal welche Wertung du nach einer Review vergibst: Nur die erste Bewertung wird gespeichert.
+                    </p>
                 </div>
             </div>
         </article>

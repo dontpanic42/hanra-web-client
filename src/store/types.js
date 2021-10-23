@@ -53,6 +53,7 @@ export default Object.freeze({
     // actions
     SRS_LOAD_SESSION: 'srsession/loadSession',
     SRS_UPDATE_RATING: 'srsession/updateSRItem',
+    SRS_MAKR_FOR_REVIEW: 'srsession/markCurrentCardForReview',
     // getter
     SRS_GET_CARDS: 'srsession/getCards',
     SRS_GET_CURRENT_CARD: 'srsession/getCurrentCard',
@@ -63,6 +64,9 @@ export default Object.freeze({
     SRS_GET_REVIEW_HAS_SAVING_ERROR: 'srsession/getReviewHasSavingError',
     SRS_GET_STAT_AVG_RATING: 'srsession/getStatisticAverageRating',
     SRS_GET_STAT_NUM_CORRECT: 'srsession/getStatisticNumCorrect',
+    SRS_GET_STAT_NUM_CARDS: 'srsession/getStatisticNumCards',
+    SRS_GET_NUM_CARDS: 'srsession/getNumCards',
+    SRS_GET_NUM_CARDS_LEFT: 'srsession/getNumCardsLeft',
     // srsession mutations
     SRS_SET_NEXT_CARD: 'srsession/nextCard',
     SRS_SET_RESET: 'srsession/resetSession',

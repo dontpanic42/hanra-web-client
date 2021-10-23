@@ -29,7 +29,8 @@ export default {
             'card': types.SRS_GET_CURRENT_CARD,
             'cards': types.SRS_GET_CARDS,
             'statAvgRating': types.SRS_GET_STAT_AVG_RATING,
-            'statNumCorrect': types.SRS_GET_STAT_NUM_CORRECT
+            'statNumCorrect': types.SRS_GET_STAT_NUM_CORRECT,
+            'statNumCards': types.SRS_GET_STAT_NUM_CARDS,
         }),
 
         statAvgRatingDisplayValue() {

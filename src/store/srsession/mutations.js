@@ -3,6 +3,19 @@ export default {
         state.cards = cards;
     },
 
+    // Set the 'isReview' flag on the current card
+    flagCurrentCardAsReview(state) {
+        const card = state.cards[state.currentCardIndex];
+        card.isReview = true;
+    },
+
+    // Takes the current card and appends it at the end of the card deck
+    // (without removing or deep cloning)
+    appendCurrentCard(state) {
+        const card = state.cards[state.currentCardIndex];
+        state.cards = state.cards.concat(card);
+    },
+
     nextCard(state) {
         state.currentCardIndex++;
     },
@@ -16,7 +29,6 @@ export default {
         const stat = state.statistics[state.currentCardIndex] || {};
         stat['rating'] = rating;
         state.statistics[state.currentCardIndex] = stat;
-        console.log('blah', state.statistics);
     },
 
     setCardsIsLoading(state, value) {

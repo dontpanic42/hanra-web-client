@@ -29,37 +29,54 @@ export default {
                 4: 'fa-laugh-beam',
                 5: 'fa-medal'
             },
-            isLoading: false
+            isLoading: false,
+            reviewWhenRatingLowerThan: 4
         }
     },
     methods: {
         ...mapActions({
-            'updateRating': types.SRS_UPDATE_RATING
+            'updateRating': types.SRS_UPDATE_RATING,
+            'markForFutureReview': types.SRS_MAKR_FOR_REVIEW
         }),
         ...mapMutations({
             'nextCard': types.SRS_SET_NEXT_CARD
         }),
         async save() {
+            // If this card was already rated, we don't need to update the rating
+            if (this.card.isReview) {
+                return await this.proceed();
+            }
+
+
             // Save the rating
             await this.updateRating({
                 setId: this.$route.params.setId,
                 rating: (this.rating == 0) ? 0.0 : parseFloat(this.rating) / 5.0
-            });
-
-            console.log('done saving', this.hasSavingError, this.hasNextCard);
+            });            
 
             // When there was no error during saving
             if (!this.hasSavingError) {
-                // When the current session is not finisehd
-                if (this.hasNextCard) {
-                    // Go to the next card
-                    this.nextCard();
-                    // Go back to the "question" view
-                    this.$router.push(`/sets/${this.$route.params.setId}/learn-view`);
-                } else {
-                    // The session is finished, go to the summary page
-                    this.$router.push(`/sets/${this.$route.params.setId}/learn-summary`);
-                }
+                await this.proceed();
+            }
+        },
+
+        // Either go to the next card or end the session.
+        async proceed () {
+            // If the card was rated as "correct", proceed.
+            if (this.rating < this.reviewWhenRatingLowerThan) {
+                // Review the card again...
+                await this.markForFutureReview();
+            }
+
+            // When the current session is not finisehd
+            if (this.hasNextCard) {
+                // Go to the next card
+                this.nextCard();
+                // Go back to the "question" view
+                this.$router.push(`/sets/${this.$route.params.setId}/learn-view`);
+            } else {
+                // The session is finished, go to the summary page
+                this.$router.push(`/sets/${this.$route.params.setId}/learn-summary`);
             }
         }
     },

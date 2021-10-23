@@ -19,10 +19,23 @@ export default {
     },
 
     getStatisticNumCorrect(state) {
-        console.log(state.statistics)
         return state.statistics.reduce((prev, cur) => {
             return prev + ((cur.rating > 0.5)? 1 : 0);
         }, 0.0);
+    },
+
+    // Returns the number of cards *including* review cards
+    getNumCards(state) {
+        return state.cards.length;
+    },
+
+    getNumCardsLeft(state) {
+        return Math.max(0, state.cards.length - (state.currentCardIndex + 1)); 
+    },
+
+    // Returns the number of cards *without* review cards
+    getStatisticNumCards(state) {
+        return state.statistics.length
     },
 
     getCardsIsLoading(state) {

@@ -34,7 +34,9 @@ export default {
     },
     computed: {
         ...mapGetters({
-            'card': types.SRS_GET_CURRENT_CARD
+            'card': types.SRS_GET_CURRENT_CARD,
+            'cardsLeft': types.SRS_GET_NUM_CARDS_LEFT,
+            'numCards': types.SRS_GET_NUM_CARDS
         }),
 
         hasMeasureWord() {

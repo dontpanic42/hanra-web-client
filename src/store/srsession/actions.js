@@ -34,6 +34,18 @@ export default {
     },
 
     /**
+     * Marks the current card for review by adding a copy at the end of the session.
+     * @param {*} param0 
+     */
+    async markCurrentCardForReview({ commit }) {
+
+        // Flag card as review to prevent future rating/updating
+        commit('flagCurrentCardAsReview');
+        // Append the card
+        commit('appendCurrentCard');
+    },
+
+    /**
      * Updates the current SR card with a rating
      * @param {*} param0 
      * @param {*} param1 
